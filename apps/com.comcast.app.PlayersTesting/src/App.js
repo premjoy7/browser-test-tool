@@ -301,7 +301,7 @@ export default class App extends ux.App {
         var channels = [];
 
         let newcat = { category: "Featured", items: []};
-        channels.push(newcat);
+        //channels.push(newcat);
 
         let useHLS = ux.Ui.useHLS();
 
@@ -319,26 +319,26 @@ export default class App extends ux.App {
 
         this._addCategoryByKeySystem("Encrypted: Widevine ONLY", channels, Assets.KeySystem.WIDEVINE);
 
-        this._addCategoryByKeySystem("Encrypted: Playready ONLY", channels, Assets.KeySystem.PLAYREADY);
+        //this._addCategoryByKeySystem("Encrypted: Playready ONLY", channels, Assets.KeySystem.PLAYREADY);
 
-        this._addCategoryMultiDRM(channels);
+        //this._addCategoryMultiDRM(channels);
 
-        this._addCategory4k(channels);
+        //this._addCategory4k(channels);
 
-        this._addCategoryLive(channels);
+        //this._addCategoryLive(channels);
 
-        this._addCategoryMultiPeriod(channels);
+        //this._addCategoryMultiPeriod(channels);
 
-        this._addCategoryMultiKey(channels);
+        //this._addCategoryMultiKey(channels);
 
-        this._addCategoryAdInsertion(channels);
+        //this._addCategoryAdInsertion(channels);
 
         //TODO add technically broken content
 
         //By Encoder (not as important)
-        for (const [key, value] of Object.entries(Assets.Encoder)) {
-            this._addCategoryByEncoder(channels, value);
-        }
+        // for (const [key, value] of Object.entries(Assets.Encoder)) {
+        //     this._addCategoryByEncoder(channels, value);
+        // }
 
 
         //FIXME disabled not needed ?

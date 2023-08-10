@@ -261,6 +261,32 @@ Assets.testAssets = [
         ],
     },
     {
+        id: 1001,
+        name: 'New (Widevine)',
+        manifestUri: 'https://v.dstv.com/proxy/catchup/STREAMING_WEB/06/100496382_23AFLEA3_SUN/100496382_23AFLEA3_SUN.ism/.mpd?filter=%28type%3D%3D%22video%22%26%26MaxHeight%3C%3D720%29%7C%7C%28%28type%3D%3D%22audio%22%26%26systemBitrate%3E30000%29%29',
+
+        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/angel_one.png',
+        shortName: 'New One',
+
+        encoder: Assets.Encoder.SHAKA_PACKAGER,
+        source: Assets.Source.SHAKA,
+        drm: [Assets.KeySystem.WIDEVINE],
+        features: [
+            Assets.Feature.DASH,
+            Assets.Feature.MP4,
+            Assets.Feature.MULTIPLE_LANGUAGES,
+            Assets.Feature.SEGMENT_BASE,
+            Assets.Feature.SUBTITLES,
+            Assets.Feature.WEBM,
+            Assets.Feature.WEBVTT,
+            Assets.Feature.OFFLINE,
+        ],
+
+        licenseServers: {
+            'com.widevine.alpha': 'https://licensev2.dstv.com/widevine/getLicense?CrmId=afl&AccountId=afl&ContentId=100496382_23AFLEA3_SUN_ext&ls_session=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJjOGQ0OGEwLTMzMmYtNDU1Yi1iODk1LTA4NTZhM2IxY2I3OCJ9.eyJpc3MiOiJBdXRob3JpemF0aW9uIElyZGVydG8gU2Vzc2lvbiBJc3N1ZXIiLCJzdWIiOiI1Mzg2ZTRkMS1hNzFkLTQ3YjktYmI0Ny0zY2I0ZjNhZDcyYTIiLCJqdGkiOiIxYjA1YjM4OS1lM2MwLTRjYTgtODEwZS1lYTJmNDRjMzc3OWUiLCJpYXQiOjE2OTE1ODIxMjAsImV4cCI6MTY5MTU4OTMyMCwiYWlkIjoiYWZsIiwiaXNlIjp0cnVlLCJlbnQiOlt7ImJpZCI6IlBSRU0iLCJlcGlkIjoiaGQtc2luZ2xlLXN0cmVhbS1lcCJ9XSwiY3NtbyI6eyJtYXMiOjEsImR0IjoiTU9CSUxFIiwibWFzZCI6MX19.D9_FqGgqsNSALAFU0-LXcmUVg2-mUvd9ezWNB0eV4CgfF1tDy9Wx9SKP5coW7mvA50rOJUiLpLU2IytOjegtZvCw0_QrjoLNSF86F_T8yVuQFggKpgIT6xDjbtPQY2DumRk-BUdmB5JnNv678RGQi7umd8_4YYzPeCDjOGJmU8rz4TOm0QOhyqDGOWWPRJe-OFlAtAj1tDF4aA3cXIlOiE3c6RcHxBA-Rr7bQaDobxgW0Vmb9e7bWsJQNtA0p2iEbkj0p2zCsDALzElBWBHE9DD1PpDAjOKqvfsLvKitQtkrwXz6H2UBsmXvIJO0KAF1SZimNjHSOFiYLiUA0c4zpg',
+        },
+    },
+    {
         id: 1,
         name: 'Angel One (multicodec, multilingual, Widevine)',
         manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/angel-one-widevine/dash.mpd',
@@ -380,74 +406,74 @@ Assets.testAssets = [
             Assets.Feature.OFFLINE,
         ],
     },
-    {
-        id: 6,
-        name: 'Sintel w/ trick mode (MP4 only, 720p)',
-        manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-trickplay/dash.mpd',
+    // {
+    //     id: 6,
+    //     name: 'Sintel w/ trick mode (MP4 only, 720p)',
+    //     manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-trickplay/dash.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/sintel.png',
-        shortName: 'Sintel',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/sintel.png',
+    //     shortName: 'Sintel',
 
-        encoder: Assets.Encoder.SHAKA_PACKAGER,
-        source: Assets.Source.SHAKA,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.HIGH_DEFINITION,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_BASE,
-            Assets.Feature.SUBTITLES,
-            Assets.Feature.TRICK_MODE,
-            Assets.Feature.WEBVTT,
-            Assets.Feature.OFFLINE,
-        ],
-    },
-    {
-        id: 7,
-        name: 'Sintel 4k (WebM only)',
-        manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-webm-only/dash.mpd',
-        // NOTE: hanging in Firefox
-        // https://bugzilla.mozilla.org/show_bug.cgi?id=1291451
+    //     encoder: Assets.Encoder.SHAKA_PACKAGER,
+    //     source: Assets.Source.SHAKA,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.HIGH_DEFINITION,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_BASE,
+    //         Assets.Feature.SUBTITLES,
+    //         Assets.Feature.TRICK_MODE,
+    //         Assets.Feature.WEBVTT,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
+    // {
+    //     id: 7,
+    //     name: 'Sintel 4k (WebM only)',
+    //     manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-webm-only/dash.mpd',
+    //     // NOTE: hanging in Firefox
+    //     // https://bugzilla.mozilla.org/show_bug.cgi?id=1291451
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/sintel.png',
-        shortName: 'Sintel',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/sintel.png',
+    //     shortName: 'Sintel',
 
-        encoder: Assets.Encoder.SHAKA_PACKAGER,
-        source: Assets.Source.SHAKA,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.HIGH_DEFINITION,
-            Assets.Feature.SEGMENT_BASE,
-            Assets.Feature.SUBTITLES,
-            Assets.Feature.ULTRA_HIGH_DEFINITION,
-            Assets.Feature.WEBM,
-            Assets.Feature.WEBVTT,
-            Assets.Feature.OFFLINE,
-        ],
-    },
-    {
-        id: 8,
-        name: 'Sintel 4k (MP4 only)',
-        manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-mp4-only/dash.mpd',
+    //     encoder: Assets.Encoder.SHAKA_PACKAGER,
+    //     source: Assets.Source.SHAKA,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.HIGH_DEFINITION,
+    //         Assets.Feature.SEGMENT_BASE,
+    //         Assets.Feature.SUBTITLES,
+    //         Assets.Feature.ULTRA_HIGH_DEFINITION,
+    //         Assets.Feature.WEBM,
+    //         Assets.Feature.WEBVTT,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
+    // {
+    //     id: 8,
+    //     name: 'Sintel 4k (MP4 only)',
+    //     manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-mp4-only/dash.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/sintel.png',
-        shortName: 'Sintel',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/sintel.png',
+    //     shortName: 'Sintel',
 
-        encoder: Assets.Encoder.SHAKA_PACKAGER,
-        source: Assets.Source.SHAKA,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.HIGH_DEFINITION,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_BASE,
-            Assets.Feature.SUBTITLES,
-            Assets.Feature.ULTRA_HIGH_DEFINITION,
-            Assets.Feature.WEBVTT,
-            Assets.Feature.OFFLINE,
-        ],
-    },
+    //     encoder: Assets.Encoder.SHAKA_PACKAGER,
+    //     source: Assets.Source.SHAKA,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.HIGH_DEFINITION,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_BASE,
+    //         Assets.Feature.SUBTITLES,
+    //         Assets.Feature.ULTRA_HIGH_DEFINITION,
+    //         Assets.Feature.WEBVTT,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
     {
         id: 9,
         name: 'Sintel 4k (multicodec, Widevine)',
@@ -479,117 +505,117 @@ Assets.testAssets = [
             'com.widevine.alpha': 'https://cwip-shaka-proxy.appspot.com/no_auth',
         },
     },
-    {
-        id: 10,
-        name: 'Sintel 4k (multicodec, VTT in MP4)',
-        manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-mp4-wvtt/dash.mpd',
+        // {
+        //     id: 10,
+        //     name: 'Sintel 4k (multicodec, VTT in MP4)',
+        //     manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-mp4-wvtt/dash.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/sintel.png',
-        shortName: 'Sintel',
+        //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/sintel.png',
+        //     shortName: 'Sintel',
 
-        encoder: Assets.Encoder.SHAKA_PACKAGER,
-        source: Assets.Source.SHAKA,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.EMBEDDED_TEXT,
-            Assets.Feature.HIGH_DEFINITION,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_BASE,
-            Assets.Feature.SUBTITLES,
-            Assets.Feature.ULTRA_HIGH_DEFINITION,
-            Assets.Feature.WEBM,
-            Assets.Feature.WEBVTT,
-            Assets.Feature.OFFLINE,
-        ],
-    },
-    {
-        id: 11,
-        name: 'Sintel w/ 44 subtitle languages',
-        manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-many-subs/dash.mpd',
+        //     encoder: Assets.Encoder.SHAKA_PACKAGER,
+        //     source: Assets.Source.SHAKA,
+        //     drm: [],
+        //     features: [
+        //         Assets.Feature.DASH,
+        //         Assets.Feature.EMBEDDED_TEXT,
+        //         Assets.Feature.HIGH_DEFINITION,
+        //         Assets.Feature.MP4,
+        //         Assets.Feature.SEGMENT_BASE,
+        //         Assets.Feature.SUBTITLES,
+        //         Assets.Feature.ULTRA_HIGH_DEFINITION,
+        //         Assets.Feature.WEBM,
+        //         Assets.Feature.WEBVTT,
+        //         Assets.Feature.OFFLINE,
+        //     ],
+        // },
+        // {
+        //     id: 11,
+        //     name: 'Sintel w/ 44 subtitle languages',
+        //     manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/sintel-many-subs/dash.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/sintel.png',
-        shortName: 'Sintel',
+        //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/sintel.png',
+        //     shortName: 'Sintel',
 
-        encoder: Assets.Encoder.SHAKA_PACKAGER,
-        source: Assets.Source.SHAKA,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.HIGH_DEFINITION,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_BASE,
-            Assets.Feature.SUBTITLES,
-            Assets.Feature.WEBVTT,
-            Assets.Feature.OFFLINE,
-        ],
-    },
-    {
-        id: 12,
-        name: 'Heliocentrism (multicodec, multiperiod)',
-        manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/heliocentrism/heliocentrism.mpd',
+        //     encoder: Assets.Encoder.SHAKA_PACKAGER,
+        //     source: Assets.Source.SHAKA,
+        //     drm: [],
+        //     features: [
+        //         Assets.Feature.DASH,
+        //         Assets.Feature.HIGH_DEFINITION,
+        //         Assets.Feature.MP4,
+        //         Assets.Feature.SEGMENT_BASE,
+        //         Assets.Feature.SUBTITLES,
+        //         Assets.Feature.WEBVTT,
+        //         Assets.Feature.OFFLINE,
+        //     ],
+        // },
+    // {
+    //     id: 12,
+    //     name: 'Heliocentrism (multicodec, multiperiod)',
+    //     manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/heliocentrism/heliocentrism.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/heliocentricism.png',
-        shortName: 'Heliocentrism',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/heliocentricism.png',
+    //     shortName: 'Heliocentrism',
 
-        encoder: Assets.Encoder.SHAKA_PACKAGER,
-        source: Assets.Source.SHAKA,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.MP4,
-            Assets.Feature.MULTIPERIOD,
-            Assets.Feature.SEGMENT_BASE,
-            Assets.Feature.WEBM,
-            Assets.Feature.OFFLINE,
-        ],
-    },
-    {
-        id: 13,
-        name: 'Heliocentrism (multicodec, multiperiod, xlink)',
-        manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/heliocentrism-xlink/heliocentrism.mpd',
+    //     encoder: Assets.Encoder.SHAKA_PACKAGER,
+    //     source: Assets.Source.SHAKA,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.MULTIPERIOD,
+    //         Assets.Feature.SEGMENT_BASE,
+    //         Assets.Feature.WEBM,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
+    // {
+    //     id: 13,
+    //     name: 'Heliocentrism (multicodec, multiperiod, xlink)',
+    //     manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/heliocentrism-xlink/heliocentrism.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/heliocentricism.png',
-        shortName: 'Heliocentrism',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/heliocentricism.png',
+    //     shortName: 'Heliocentrism',
 
-        encoder: Assets.Encoder.SHAKA_PACKAGER,
-        source: Assets.Source.SHAKA,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.MP4,
-            Assets.Feature.MULTIPERIOD,
-            Assets.Feature.SEGMENT_BASE,
-            Assets.Feature.WEBM,
-            Assets.Feature.XLINK,
-            Assets.Feature.OFFLINE,
-        ],
-    },
-    {
-        id: 14,
-        name: '"Dig the Uke" by Stefan Kartenberg (audio only, multicodec)',
-        // From: http://dig.ccmixter.org/files/JeffSpeed68/53327
-        // Licensed under Creative Commons BY-NC 3.0.
-        // Free for non-commercial use with attribution.
-        // http://creativecommons.org/licenses/by-nc/3.0/
-        manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/dig-the-uke-clear/dash.mpd',
+    //     encoder: Assets.Encoder.SHAKA_PACKAGER,
+    //     source: Assets.Source.SHAKA,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.MULTIPERIOD,
+    //         Assets.Feature.SEGMENT_BASE,
+    //         Assets.Feature.WEBM,
+    //         Assets.Feature.XLINK,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
+    // {
+    //     id: 14,
+    //     name: '"Dig the Uke" by Stefan Kartenberg (audio only, multicodec)',
+    //     // From: http://dig.ccmixter.org/files/JeffSpeed68/53327
+    //     // Licensed under Creative Commons BY-NC 3.0.
+    //     // Free for non-commercial use with attribution.
+    //     // http://creativecommons.org/licenses/by-nc/3.0/
+    //     manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/dig-the-uke-clear/dash.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/audio_only.png',
-        shortName: 'Dig the Uke',
-        description: 'An audio-only presentation performed by Stefan Kartenberg.',
-        isFeatured: true,
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/audio_only.png',
+    //     shortName: 'Dig the Uke',
+    //     description: 'An audio-only presentation performed by Stefan Kartenberg.',
+    //     isFeatured: true,
 
-        encoder: Assets.Encoder.SHAKA_PACKAGER,
-        source: Assets.Source.SHAKA,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_BASE,
-            Assets.Feature.WEBM,
-            Assets.Feature.OFFLINE,
-        ],
-    },
+    //     encoder: Assets.Encoder.SHAKA_PACKAGER,
+    //     source: Assets.Source.SHAKA,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_BASE,
+    //         Assets.Feature.WEBM,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
     {
         id: 15,
         name: '"Dig the Uke" by Stefan Kartenberg (audio only, multicodec, Widevine)',  // eslint-disable-line max-len
@@ -617,48 +643,48 @@ Assets.testAssets = [
             'com.widevine.alpha': 'https://cwip-shaka-proxy.appspot.com/no_auth',
         },
     },
-    {
-        id: 16,
-        name: 'Tears of Steel (multicodec, TTML)',
-        manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/tos-ttml/dash.mpd',
+    // {
+    //     id: 16,
+    //     name: 'Tears of Steel (multicodec, TTML)',
+    //     manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/tos-ttml/dash.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
-        shortName: 'Tears of Steel',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
+    //     shortName: 'Tears of Steel',
 
-        encoder: Assets.Encoder.SHAKA_PACKAGER,
-        source: Assets.Source.SHAKA,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.HIGH_DEFINITION,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_BASE,
-            Assets.Feature.SUBTITLES,
-            Assets.Feature.TTML,
-            Assets.Feature.WEBM,
-            Assets.Feature.OFFLINE,
-        ],
-    },
-    {
-        id: 17,
-        name: 'Tears of Steel (multicodec, surround + stereo)',
-        manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/tos-surround/dash.mpd',
+    //     encoder: Assets.Encoder.SHAKA_PACKAGER,
+    //     source: Assets.Source.SHAKA,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.HIGH_DEFINITION,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_BASE,
+    //         Assets.Feature.SUBTITLES,
+    //         Assets.Feature.TTML,
+    //         Assets.Feature.WEBM,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
+    // {
+    //     id: 17,
+    //     name: 'Tears of Steel (multicodec, surround + stereo)',
+    //     manifestUri: 'https://storage.googleapis.com/shaka-demo-assets/tos-surround/dash.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
-        shortName: 'Tears of Steel',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
+    //     shortName: 'Tears of Steel',
 
-        encoder: Assets.Encoder.SHAKA_PACKAGER,
-        source: Assets.Source.SHAKA,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_BASE,
-            Assets.Feature.SURROUND,
-            Assets.Feature.WEBM,
-            Assets.Feature.OFFLINE,
-        ],
-    },
+    //     encoder: Assets.Encoder.SHAKA_PACKAGER,
+    //     source: Assets.Source.SHAKA,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_BASE,
+    //         Assets.Feature.SURROUND,
+    //         Assets.Feature.WEBM,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
     {
         id: 18,
         name: 'Shaka Player History (multicodec, live, DASH)',
@@ -805,53 +831,53 @@ Assets.testAssets = [
             'X-AxDRM-Message': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJjb21fa2V5X2lkIjoiYjMzNjRlYjUtNTFmNi00YWUzLThjOTgtMzNjZWQ1ZTMxYzc4IiwibWVzc2FnZSI6eyJ0eXBlIjoiZW50aXRsZW1lbnRfbWVzc2FnZSIsImtleXMiOlt7ImlkIjoiMDg3Mjc4NmUtZjllNy00NjVmLWEzYTItNGU1YjBlZjhmYTQ1IiwiZW5jcnlwdGVkX2tleSI6IlB3NitlRVlOY3ZqWWJmc2gzWDNmbWc9PSJ9LHsiaWQiOiJjMTRmMDcwOS1mMmI5LTQ0MjctOTE2Yi02MWI1MjU4NjUwNmEiLCJlbmNyeXB0ZWRfa2V5IjoiLzErZk5paDM4bXFSdjR5Y1l6bnQvdz09In0seyJpZCI6IjhiMDI5ZTUxLWQ1NmEtNDRiZC05MTBmLWQ0YjVmZDkwZmJhMiIsImVuY3J5cHRlZF9rZXkiOiJrcTBKdVpFanBGTjhzYVRtdDU2ME9nPT0ifSx7ImlkIjoiMmQ2ZTkzODctNjBjYS00MTQ1LWFlYzItYzQwODM3YjRiMDI2IiwiZW5jcnlwdGVkX2tleSI6IlRjUlFlQld4RW9IT0tIcmFkNFNlVlE9PSJ9LHsiaWQiOiJkZTAyZjA3Zi1hMDk4LTRlZTAtYjU1Ni05MDdjMGQxN2ZiYmMiLCJlbmNyeXB0ZWRfa2V5IjoicG9lbmNTN0dnbWVHRmVvSjZQRUFUUT09In0seyJpZCI6IjkxNGU2OWY0LTBhYjMtNDUzNC05ZTlmLTk4NTM2MTVlMjZmNiIsImVuY3J5cHRlZF9rZXkiOiJlaUkvTXNsbHJRNHdDbFJUL0xObUNBPT0ifSx7ImlkIjoiZGE0NDQ1YzItZGI1ZS00OGVmLWIwOTYtM2VmMzQ3YjE2YzdmIiwiZW5jcnlwdGVkX2tleSI6IjJ3K3pkdnFycERWM3hSMGJKeTR1Z3c9PSJ9LHsiaWQiOiIyOWYwNWU4Zi1hMWFlLTQ2ZTQtODBlOS0yMmRjZDQ0Y2Q3YTEiLCJlbmNyeXB0ZWRfa2V5IjoiL3hsU0hweHdxdTNnby9nbHBtU2dhUT09In0seyJpZCI6IjY5ZmU3MDc3LWRhZGQtNGI1NS05NmNkLWMzZWRiMzk5MTg1MyIsImVuY3J5cHRlZF9rZXkiOiJ6dTZpdXpOMnBzaTBaU3hRaUFUa1JRPT0ifV19fQ.BXr93Et1krYMVs-CUnf7F3ywJWFRtxYdkR7Qn4w3-to',  // eslint-disable-line max-len
         },
     },
-    {
-        id: 23,
-        name: 'Clear, single-Period',
-        manifestUri: 'https://media.axprod.net/TestVectors/v7-Clear/Manifest.mpd',
+    // {
+    //     id: 23,
+    //     name: 'Clear, single-Period',
+    //     manifestUri: 'https://media.axprod.net/TestVectors/v7-Clear/Manifest.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
-        shortName: 'Tears of Steel',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
+    //     shortName: 'Tears of Steel',
 
-        encoder: Assets.Encoder.AXINOM,
-        source: Assets.Source.AXINOM,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.EMBEDDED_TEXT,
-            Assets.Feature.HIGH_DEFINITION,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_TEMPLATE_DURATION,
-            Assets.Feature.TTML,
-            Assets.Feature.ULTRA_HIGH_DEFINITION,
-            Assets.Feature.WEBVTT,
-            Assets.Feature.OFFLINE,
-        ],
-    },
-    {
-        id: 24,
-        name: 'Clear, multi-Period',
-        manifestUri: 'https://media.axprod.net/TestVectors/v7-Clear/Manifest_MultiPeriod.mpd',
+    //     encoder: Assets.Encoder.AXINOM,
+    //     source: Assets.Source.AXINOM,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.EMBEDDED_TEXT,
+    //         Assets.Feature.HIGH_DEFINITION,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_TEMPLATE_DURATION,
+    //         Assets.Feature.TTML,
+    //         Assets.Feature.ULTRA_HIGH_DEFINITION,
+    //         Assets.Feature.WEBVTT,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
+    // {
+    //     id: 24,
+    //     name: 'Clear, multi-Period',
+    //     manifestUri: 'https://media.axprod.net/TestVectors/v7-Clear/Manifest_MultiPeriod.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
-        shortName: 'Tears of Steel',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
+    //     shortName: 'Tears of Steel',
 
-        encoder: Assets.Encoder.AXINOM,
-        source: Assets.Source.AXINOM,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.EMBEDDED_TEXT,
-            Assets.Feature.HIGH_DEFINITION,
-            Assets.Feature.MP4,
-            Assets.Feature.MULTIPERIOD,
-            Assets.Feature.SEGMENT_TEMPLATE_DURATION,
-            Assets.Feature.TTML,
-            Assets.Feature.ULTRA_HIGH_DEFINITION,
-            Assets.Feature.WEBVTT,
-            Assets.Feature.OFFLINE,
-        ],
-    },
+    //     encoder: Assets.Encoder.AXINOM,
+    //     source: Assets.Source.AXINOM,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.EMBEDDED_TEXT,
+    //         Assets.Feature.HIGH_DEFINITION,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.MULTIPERIOD,
+    //         Assets.Feature.SEGMENT_TEMPLATE_DURATION,
+    //         Assets.Feature.TTML,
+    //         Assets.Feature.ULTRA_HIGH_DEFINITION,
+    //         Assets.Feature.WEBVTT,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
     {
         id: 25,
         name: 'Clear, Live DASH',
@@ -893,26 +919,26 @@ Assets.testAssets = [
 
     // Unified Streaming {{{
     // Src: http://demo.unified-streaming.com/features.html
-    {
-        id: 27,
-        name: 'Tears of Steel',
-        manifestUri: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.mpd',
+    // {
+    //     id: 27,
+    //     name: 'Tears of Steel',
+    //     manifestUri: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
-        shortName: 'Tears of Steel',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
+    //     shortName: 'Tears of Steel',
 
-        encoder: Assets.Encoder.UNIFIED_STREAMING,
-        source: Assets.Source.UNIFIED_STREAMING,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.HIGH_DEFINITION,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_TEMPLATE_TIMELINE,
-            Assets.Feature.ULTRA_HIGH_DEFINITION,
-            Assets.Feature.OFFLINE,
-        ],
-    },
+    //     encoder: Assets.Encoder.UNIFIED_STREAMING,
+    //     source: Assets.Source.UNIFIED_STREAMING,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.HIGH_DEFINITION,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_TEMPLATE_TIMELINE,
+    //         Assets.Feature.ULTRA_HIGH_DEFINITION,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
     {
         id: 28,
         name: 'Tears of Steel (Widevine)',
@@ -971,30 +997,30 @@ Assets.testAssets = [
             // 'com.microsoft.playready': 'https://test.playready.microsoft.com/service/rightsmanager.asmx?PlayRight=1&UseSimpleNonPersistentLicense=1',
         },
     },
-    {
-        id: 30,
-        name: 'Tears of Steel (subtitles)',
-        manifestUri: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel-en.ism/.mpd',
+    // {
+    //     id: 30,
+    //     name: 'Tears of Steel (subtitles)',
+    //     manifestUri: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel-en.ism/.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
-        shortName: 'Tears of Steel',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
+    //     shortName: 'Tears of Steel',
 
-        encoder: Assets.Encoder.UNIFIED_STREAMING,
-        source: Assets.Source.UNIFIED_STREAMING,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.EMBEDDED_TEXT,
-            Assets.Feature.HIGH_DEFINITION,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_TEMPLATE_TIMELINE,
-            Assets.Feature.SEGMENTED_TEXT,
-            Assets.Feature.SUBTITLES,
-            Assets.Feature.TTML,
-            Assets.Feature.ULTRA_HIGH_DEFINITION,
-            Assets.Feature.OFFLINE,
-        ],
-    },
+    //     encoder: Assets.Encoder.UNIFIED_STREAMING,
+    //     source: Assets.Source.UNIFIED_STREAMING,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.EMBEDDED_TEXT,
+    //         Assets.Feature.HIGH_DEFINITION,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_TEMPLATE_TIMELINE,
+    //         Assets.Feature.SEGMENTED_TEXT,
+    //         Assets.Feature.SUBTITLES,
+    //         Assets.Feature.TTML,
+    //         Assets.Feature.ULTRA_HIGH_DEFINITION,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
     // }}}
 
     // DASH-IF assets {{{
@@ -1031,131 +1057,131 @@ Assets.testAssets = [
             Assets.Feature.SEGMENT_TEMPLATE_DURATION,
         ],
     },
-    {
-        id: 33,
-        name: 'Live sim SegmentTimeline w $Time$ (6s segments)',
-        manifestUri: 'https://livesim.dashif.org/livesim/segtimeline_1/utc_head/testpic_6s/Manifest.mpd',
+    // {
+    //     id: 33,
+    //     name: 'Live sim SegmentTimeline w $Time$ (6s segments)',
+    //     manifestUri: 'https://livesim.dashif.org/livesim/segtimeline_1/utc_head/testpic_6s/Manifest.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.png',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.png',
 
-        encoder: Assets.Encoder.UNKNOWN,
-        source: Assets.Source.DASH_IF,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.LIVE,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_TEMPLATE_TIMELINE_TIME,
-        ],
-    },
-    {
-        id: 34,
-        name: 'Live sim SegmentTimeline w $Number$ (6s segments)',
-        manifestUri: 'https://livesim.dashif.org/livesim/segtimelinenr_1/utc_head/testpic_6s/Manifest.mpd',
+    //     encoder: Assets.Encoder.UNKNOWN,
+    //     source: Assets.Source.DASH_IF,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.LIVE,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_TEMPLATE_TIMELINE_TIME,
+    //     ],
+    // },
+    // {
+    //     id: 34,
+    //     name: 'Live sim SegmentTimeline w $Number$ (6s segments)',
+    //     manifestUri: 'https://livesim.dashif.org/livesim/segtimelinenr_1/utc_head/testpic_6s/Manifest.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.png',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.png',
 
-        encoder: Assets.Encoder.UNKNOWN,
-        source: Assets.Source.DASH_IF,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.LIVE,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_TEMPLATE_TIMELINE_NUMBER,
-        ],
-    },
-    {
-        id: 35,
-        name: 'Live sim SegmentTimeline StartOver [-20s, +20s] (2s segments)',
-        manifestUri: 'https://livesim.dashif.org/livesim/segtimeline_1/startrel_-20/stoprel_20/timeoffset_0/testpic_2s/Manifest.mpd',
+    //     encoder: Assets.Encoder.UNKNOWN,
+    //     source: Assets.Source.DASH_IF,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.LIVE,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_TEMPLATE_TIMELINE_NUMBER,
+    //     ],
+    // },
+    // {
+    //     id: 35,
+    //     name: 'Live sim SegmentTimeline StartOver [-20s, +20s] (2s segments)',
+    //     manifestUri: 'https://livesim.dashif.org/livesim/segtimeline_1/startrel_-20/stoprel_20/timeoffset_0/testpic_2s/Manifest.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.png',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.png',
 
-        encoder: Assets.Encoder.UNKNOWN,
-        source: Assets.Source.DASH_IF,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.LIVE,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_TEMPLATE_TIMELINE_TIME,
-        ],
-    },
-    {
-        id: 36,
-        name: 'Live sim StartOver SegTmpl Duration [-20s, +20s] (2s segments)',
-        manifestUri: 'https://livesim.dashif.org/livesim/startrel_-20/stoprel_20/timeoffset_0/testpic_2s/Manifest.mpd',
+    //     encoder: Assets.Encoder.UNKNOWN,
+    //     source: Assets.Source.DASH_IF,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.LIVE,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_TEMPLATE_TIMELINE_TIME,
+    //     ],
+    // },
+    // {
+    //     id: 36,
+    //     name: 'Live sim StartOver SegTmpl Duration [-20s, +20s] (2s segments)',
+    //     manifestUri: 'https://livesim.dashif.org/livesim/startrel_-20/stoprel_20/timeoffset_0/testpic_2s/Manifest.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.png',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.png',
 
-        encoder: Assets.Encoder.UNKNOWN,
-        source: Assets.Source.DASH_IF,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.LIVE,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_TEMPLATE_DURATION,
-        ],
-    },
-    {
-        id: 37,
-        name: 'Live sim SegTmpl Duration (multi-period 60s)',
-        manifestUri: 'https://livesim.dashif.org/livesim/utc_head/periods_60/testpic_2s/Manifest.mpd',
+    //     encoder: Assets.Encoder.UNKNOWN,
+    //     source: Assets.Source.DASH_IF,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.LIVE,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_TEMPLATE_DURATION,
+    //     ],
+    // },
+    // {
+    //     id: 37,
+    //     name: 'Live sim SegTmpl Duration (multi-period 60s)',
+    //     manifestUri: 'https://livesim.dashif.org/livesim/utc_head/periods_60/testpic_2s/Manifest.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.png',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.png',
 
-        encoder: Assets.Encoder.UNKNOWN,
-        source: Assets.Source.DASH_IF,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.LIVE,
-            Assets.Feature.MP4,
-            Assets.Feature.MULTIPERIOD,
-            Assets.Feature.SEGMENT_TEMPLATE_DURATION,
-        ],
-    },
-    {
-        id: 38,
-        name: 'Live sim TTML Image Subtitles embedded (VoD)',
-        manifestUri: 'https://livesim.dashif.org/dash/vod/testpic_2s/img_subs.mpd',
+    //     encoder: Assets.Encoder.UNKNOWN,
+    //     source: Assets.Source.DASH_IF,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.LIVE,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.MULTIPERIOD,
+    //         Assets.Feature.SEGMENT_TEMPLATE_DURATION,
+    //     ],
+    // },
+    // {
+    //     id: 38,
+    //     name: 'Live sim TTML Image Subtitles embedded (VoD)',
+    //     manifestUri: 'https://livesim.dashif.org/dash/vod/testpic_2s/img_subs.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.png',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/dash_if_test_pattern.png',
 
-        encoder: Assets.Encoder.UNKNOWN,
-        source: Assets.Source.DASH_IF,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.MP4,
-            Assets.Feature.SUBTITLES,
-            Assets.Feature.TTML,
-        ],
-    },
-    // }}}
+    //     encoder: Assets.Encoder.UNKNOWN,
+    //     source: Assets.Source.DASH_IF,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SUBTITLES,
+    //         Assets.Feature.TTML,
+    //     ],
+    // },
+    // // }}}
 
-    // Wowza assets {{{
-    // Src: http://www.dash-player.com/demo/streaming-server-and-encoder-support/
-    {
-        id: 39,
-        name: 'Big Buck Bunny (Live)',
-        manifestUri: 'https://wowzaec2demo.streamlock.net/live/bigbuckbunny/manifest_mpm4sav_mvtime.mpd',
+    // // Wowza assets {{{
+    // // Src: http://www.dash-player.com/demo/streaming-server-and-encoder-support/
+    // {
+    //     id: 39,
+    //     name: 'Big Buck Bunny (Live)',
+    //     manifestUri: 'https://wowzaec2demo.streamlock.net/live/bigbuckbunny/manifest_mpm4sav_mvtime.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.png',
-        shortName: 'Big Buck Bunny',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/big_buck_bunny.png',
+    //     shortName: 'Big Buck Bunny',
 
-        encoder: Assets.Encoder.WOWZA,
-        source: Assets.Encoder.WOWZA,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.LIVE,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_TEMPLATE_TIMELINE,
-        ],
-    },
+    //     encoder: Assets.Encoder.WOWZA,
+    //     source: Assets.Encoder.WOWZA,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.LIVE,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_TEMPLATE_TIMELINE,
+    //     ],
+    // },
     // }}}
 
     // bitcodin assets {{{
@@ -1286,46 +1312,46 @@ Assets.testAssets = [
             'com.microsoft.playready': 'https://amssamples.keydelivery.mediaservices.windows.net/PlayReady/',
         },
     },
-    {
-        id: 46,
-        name: 'Tears Of Steel (external text)',
-        manifestUri: 'https://ams-samplescdn.streaming.mediaservices.windows.net/11196e3d-2f40-4835-9a4d-fc52751b0323/TearsOfSteel_WAMEH264SmoothStreaming720p.ism/manifest(format=mpd-time-csf)',
-        extraText: [
-            {
-                uri: 'https://ams-samplescdn.streaming.mediaservices.windows.net/11196e3d-2f40-4835-9a4d-fc52751b0323/TOS-en.vtt',
-                language: 'en',
-                kind: 'subtitle',
-                mime: 'text/vtt',
-            },
-            {
-                uri: 'https://ams-samplescdn.streaming.mediaservices.windows.net/11196e3d-2f40-4835-9a4d-fc52751b0323/TOS-es.vtt',
-                language: 'es',
-                kind: 'subtitle',
-                mime: 'text/vtt',
-            },
-            {
-                uri: 'https://ams-samplescdn.streaming.mediaservices.windows.net/11196e3d-2f40-4835-9a4d-fc52751b0323/TOS-fr.vtt',
-                language: 'fr',
-                kind: 'subtitle',
-                mime: 'text/vtt',
-            },
-        ],
+    // {
+    //     id: 46,
+    //     name: 'Tears Of Steel (external text)',
+    //     manifestUri: 'https://ams-samplescdn.streaming.mediaservices.windows.net/11196e3d-2f40-4835-9a4d-fc52751b0323/TearsOfSteel_WAMEH264SmoothStreaming720p.ism/manifest(format=mpd-time-csf)',
+    //     extraText: [
+    //         {
+    //             uri: 'https://ams-samplescdn.streaming.mediaservices.windows.net/11196e3d-2f40-4835-9a4d-fc52751b0323/TOS-en.vtt',
+    //             language: 'en',
+    //             kind: 'subtitle',
+    //             mime: 'text/vtt',
+    //         },
+    //         {
+    //             uri: 'https://ams-samplescdn.streaming.mediaservices.windows.net/11196e3d-2f40-4835-9a4d-fc52751b0323/TOS-es.vtt',
+    //             language: 'es',
+    //             kind: 'subtitle',
+    //             mime: 'text/vtt',
+    //         },
+    //         {
+    //             uri: 'https://ams-samplescdn.streaming.mediaservices.windows.net/11196e3d-2f40-4835-9a4d-fc52751b0323/TOS-fr.vtt',
+    //             language: 'fr',
+    //             kind: 'subtitle',
+    //             mime: 'text/vtt',
+    //         },
+    //     ],
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
-        shortName: 'Tears of Steel',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/tears_of_steel.png',
+    //     shortName: 'Tears of Steel',
 
-        encoder: Assets.Encoder.AZURE_MEDIA_SERVICES,
-        source: Assets.Source.AZURE_MEDIA_SERVICES,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_TEMPLATE_TIMELINE,
-            Assets.Feature.SUBTITLES,
-            Assets.Feature.WEBVTT,
-            Assets.Feature.OFFLINE,
-        ],
-    },
+    //     encoder: Assets.Encoder.AZURE_MEDIA_SERVICES,
+    //     source: Assets.Source.AZURE_MEDIA_SERVICES,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_TEMPLATE_TIMELINE,
+    //         Assets.Feature.SUBTITLES,
+    //         Assets.Feature.WEBVTT,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
     // }}}
 
     // GPAC assets {{{
@@ -1354,41 +1380,41 @@ Assets.testAssets = [
             Assets.Feature.SEGMENT_TEMPLATE_DURATION,
         ],
     },
-    {
-        id: 48,
-        name: 'live profile with five periods',
-        manifestUri: 'https://download.tsi.telecom-paristech.fr/gpac/DASH_CONFORMANCE/TelecomParisTech/mp4-live-periods/mp4-live-periods-mpd.mpd',
+    // {
+    //     id: 48,
+    //     name: 'live profile with five periods',
+    //     manifestUri: 'https://download.tsi.telecom-paristech.fr/gpac/DASH_CONFORMANCE/TelecomParisTech/mp4-live-periods/mp4-live-periods-mpd.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.png',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.png',
 
-        encoder: Assets.Encoder.MP4BOX,
-        source: Assets.Source.GPAC,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.MP4,
-            Assets.Feature.MULTIPERIOD,
-            Assets.Feature.SEGMENT_TEMPLATE_DURATION,
-            Assets.Feature.OFFLINE,
-        ],
-    },
-    {
-        id: 49,
-        name: 'main profile, single file',
-        manifestUri: 'https://download.tsi.telecom-paristech.fr/gpac/DASH_CONFORMANCE/TelecomParisTech/mp4-main-single/mp4-main-single-mpd-AV-NBS.mpd',
+    //     encoder: Assets.Encoder.MP4BOX,
+    //     source: Assets.Source.GPAC,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.MULTIPERIOD,
+    //         Assets.Feature.SEGMENT_TEMPLATE_DURATION,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
+    // {
+    //     id: 49,
+    //     name: 'main profile, single file',
+    //     manifestUri: 'https://download.tsi.telecom-paristech.fr/gpac/DASH_CONFORMANCE/TelecomParisTech/mp4-main-single/mp4-main-single-mpd-AV-NBS.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.png',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.png',
 
-        encoder: Assets.Encoder.MP4BOX,
-        source: Assets.Source.GPAC,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_LIST_DURATION,
-            Assets.Feature.OFFLINE,
-        ],
-    },
+    //     encoder: Assets.Encoder.MP4BOX,
+    //     source: Assets.Source.GPAC,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_LIST_DURATION,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
     {
         id: 50,
         name: 'main profile, mutiple files',
@@ -1410,23 +1436,23 @@ Assets.testAssets = [
             Assets.Feature.SEGMENT_LIST_DURATION,
         ],
     },
-    {
-        id: 51,
-        name: 'onDemand profile',
-        manifestUri: 'https://download.tsi.telecom-paristech.fr/gpac/DASH_CONFORMANCE/TelecomParisTech/mp4-onDemand/mp4-onDemand-mpd-AV.mpd',
+    // {
+    //     id: 51,
+    //     name: 'onDemand profile',
+    //     manifestUri: 'https://download.tsi.telecom-paristech.fr/gpac/DASH_CONFORMANCE/TelecomParisTech/mp4-onDemand/mp4-onDemand-mpd-AV.mpd',
 
-        iconUri: 'https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.png',
+    //     iconUri: 'https://storage.googleapis.com/shaka-asset-icons/gpac_test_pattern.png',
 
-        encoder: Assets.Encoder.MP4BOX,
-        source: Assets.Source.GPAC,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.MP4,
-            Assets.Feature.SEGMENT_BASE,
-            Assets.Feature.OFFLINE,
-        ],
-    },
+    //     encoder: Assets.Encoder.MP4BOX,
+    //     source: Assets.Source.GPAC,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.SEGMENT_BASE,
+    //         Assets.Feature.OFFLINE,
+    //     ],
+    // },
     {
         id: 52,
         name: 'main profile, open GOP',
@@ -1700,26 +1726,26 @@ Assets.testAssets = [
             'com.widevine.alpha': 'https://widevine-proxy.appspot.com/proxy',
         },
     },
-    {
-        id: 63,
-        name: 'Widevine Static SegmentTimeline',
-        manifestUri: 'https://wowzaec2demo.streamlock.net/vod/elephantsdream_1100kbps-enc-wv.mp4/manifest_mvtime.mpd',
+    // {
+    //     id: 63,
+    //     name: 'Widevine Static SegmentTimeline',
+    //     manifestUri: 'https://wowzaec2demo.streamlock.net/vod/elephantsdream_1100kbps-enc-wv.mp4/manifest_mvtime.mpd',
 
-        iconUri: '',
-        shortName: 'Elephants Dream',
-        description: '',
+    //     iconUri: '',
+    //     shortName: 'Elephants Dream',
+    //     description: '',
 
-        encoder: Assets.Encoder.WOWZA,
-        source: Assets.Source.WOWZA,
-        drm: [ Assets.KeySystem.WIDEVINE ],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.MP4,
-        ],
-        licenseServers: {
-            'com.widevine.alpha': 'https://widevine-proxy.appspot.com/proxy',
-        },
-    },
+    //     encoder: Assets.Encoder.WOWZA,
+    //     source: Assets.Source.WOWZA,
+    //     drm: [ Assets.KeySystem.WIDEVINE ],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.MP4,
+    //     ],
+    //     licenseServers: {
+    //         'com.widevine.alpha': 'https://widevine-proxy.appspot.com/proxy',
+    //     },
+    // },
     {
         id: 64,
         name: 'Widevine Static SegmentTemplate',
@@ -1781,27 +1807,27 @@ Assets.testAssets = [
             'com.widevine.alpha': 'https://widevine-proxy.appspot.com/proxy',
         },
     },
-    {
-        id: 67,
-        name: 'Widevine Dynamic SegmentTemplate',
-        manifestUri: 'https://wowzaec2demo.streamlock.net/live/bigbuckbunny-enc-wv.stream/manifest_mvnumber.mpd',
+    // {
+    //     id: 67,
+    //     name: 'Widevine Dynamic SegmentTemplate',
+    //     manifestUri: 'https://wowzaec2demo.streamlock.net/live/bigbuckbunny-enc-wv.stream/manifest_mvnumber.mpd',
 
-        iconUri: '',
-        shortName: 'Big Buck Bunny',
-        description: '',
+    //     iconUri: '',
+    //     shortName: 'Big Buck Bunny',
+    //     description: '',
 
-        encoder: Assets.Encoder.WOWZA,
-        source: Assets.Source.WOWZA,
-        drm: [ Assets.KeySystem.WIDEVINE ],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.MP4,
-            Assets.Feature.LIVE,
-        ],
-        licenseServers: {
-            'com.widevine.alpha': 'https://widevine-proxy.appspot.com/proxy',
-        },
-    },
+    //     encoder: Assets.Encoder.WOWZA,
+    //     source: Assets.Source.WOWZA,
+    //     drm: [ Assets.KeySystem.WIDEVINE ],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.MP4,
+    //         Assets.Feature.LIVE,
+    //     ],
+    //     licenseServers: {
+    //         'com.widevine.alpha': 'https://widevine-proxy.appspot.com/proxy',
+    //     },
+    // },
     {
         id: 68,
         name: 'Playready 2.0, HLS',
@@ -1848,25 +1874,25 @@ Assets.testAssets = [
 
 
 ////// content from DASH.JS END
-    {
-        id: 70,
-        name: 'Dolby Vision Dash',
-        manifestUri: 'http://d3rlna7iyyu8wu.cloudfront.net/DolbyVision_Atmos/profile8.1_DASH/p8.1.mpd',
+    // {
+    //     id: 70,
+    //     name: 'Dolby Vision Dash',
+    //     manifestUri: 'http://d3rlna7iyyu8wu.cloudfront.net/DolbyVision_Atmos/profile8.1_DASH/p8.1.mpd',
 
-        iconUri: '',
-        shortName: 'Glass Blowing',
-        description: 'Glass Blowing @59.94fps: Dolby Vision Profile 8.1 – Dolby Atmos',
+    //     iconUri: '',
+    //     shortName: 'Glass Blowing',
+    //     description: 'Glass Blowing @59.94fps: Dolby Vision Profile 8.1 – Dolby Atmos',
 
-        encoder: Assets.Encoder.UNKNOWN,
-        source: Assets.Source.CUSTOM,
-        drm: [ ],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.MP4,
-        ],
-        licenseServers: {
-        },
-    },
+    //     encoder: Assets.Encoder.UNKNOWN,
+    //     source: Assets.Source.CUSTOM,
+    //     drm: [ ],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.MP4,
+    //     ],
+    //     licenseServers: {
+    //     },
+    // },
     {
         id: 71,
         name: 'Dolby Vision HLS',
@@ -1886,24 +1912,24 @@ Assets.testAssets = [
         licenseServers: {
         },
     },
-    {
-        id: 72,
-        name: 'mpd Test Content (2s segments)',
-        manifestUri: 'https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/main.mpd',
+    // {
+    //     id: 72,
+    //     name: 'mpd Test Content (2s segments)',
+    //     manifestUri: 'https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/main.mpd',
 
-        iconUri: 'https://www.hackingchinese.com/wp-content/uploads/2013/05/audacity.jpg',
-        shortName: 'DASH (2s segments)',
-        description: 'Generated multi-profile multi-audio clear DASH test content with baked in media timestamps and resolution.',
-        isFeatured: true,
+    //     iconUri: 'https://www.hackingchinese.com/wp-content/uploads/2013/05/audacity.jpg',
+    //     shortName: 'DASH (2s segments)',
+    //     description: 'Generated multi-profile multi-audio clear DASH test content with baked in media timestamps and resolution.',
+    //     isFeatured: true,
 
-        encoder: Assets.Encoder.UNKNOWN,
-        source: Assets.Source.CUSTOM,
-        drm: [],
-        features: [
-            Assets.Feature.DASH,
-            Assets.Feature.ENCRYPTED_WITH_CLEAR,
-        ],
-    },
+    //     encoder: Assets.Encoder.UNKNOWN,
+    //     source: Assets.Source.CUSTOM,
+    //     drm: [],
+    //     features: [
+    //         Assets.Feature.DASH,
+    //         Assets.Feature.ENCRYPTED_WITH_CLEAR,
+    //     ],
+    // },
     {
         id: 73,
         name: 'fragmented mp4 test content (2s segments)',

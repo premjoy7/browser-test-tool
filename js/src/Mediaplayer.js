@@ -263,7 +263,7 @@ export default class Mediaplayer extends lng.Component {
         //shaka.polyfill.MediaSource.install(); //stubAbort is needed for clear content webm
 
         player = new shaka.Player(this.videoEl);
-		
+
         player.addEventListener('error', (event) => {
             this.reportError(event.detail);
         });
@@ -305,7 +305,6 @@ export default class Mediaplayer extends lng.Component {
     }
 
     openShaka(stream) {
-		console.log('Playing content: ', stream);
         console.log('Playing manifest: ' + stream.manifest);
 
         this.clearDebugArea();
@@ -324,13 +323,6 @@ export default class Mediaplayer extends lng.Component {
 
         //TODO config
         //streaming: {bufferBehind: 10, bufferingGoal: 20}
-
-		const analyticsConfig = {
-		  key: 'f2a37300-4641-4139-9468-deaa684ad59c',
-		  videoId: stream.asset.name,
-		};
-		const analytics = new bitmovin.analytics.ShakaAdapter(analyticsConfig, player);
-		console.log("bitmovin analytics: ", analytics);
 
         player.load(stream.manifest).then(() => {
             console.log("video has been loaded");
